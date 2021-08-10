@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="play-video.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <div class="menu-icon" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+            <img src="image/logo.png" alt="" class="logo">
+        </div>
+        <div class="nav-middle flex-div">
+            <div class="search-box flex-div">
+                <input type="text" placeholder="Search">
+                <img src="image/search.png" alt="">    
+            </div>
+            <img src="image/voice-search.png" alt="" class="mic-icon">
+            
+        </div>
+        <div class="nav-right flex-div">
+            <img src="image/upload.png" alt="">
+            <img src="image/more.png" alt="">
+            <img src="image/notification.png" alt="">
+            <img src="image/Jack.png" alt="" class="user-icon">
+        </div>
+        
+    </nav>
+    <div class="container play-container">
+        <div class="row">
+            <div class="play-video">
+                <video controls autoplay>
+                    <source src="image/video.mp4">
+                </video>
+            </div>
+            <div class="right-sidebar">
+                <div class="side-video-list">
+                    <a href="" class="small-thumbnail"><img src="image/thumbnail1.png" alt=""></a>
+                    <div class="vid-info">
+                        <a href="">Best channel</a>
+                        <p>Easy Tuitrial</p>
+                        <p>&bull;15k views</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
