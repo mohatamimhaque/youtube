@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tik Tok Clone</title>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/function.js"></script>
+    <link rel="stylesheet" href="../assets/css/google-font.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="assets/css/google-font.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/shorts.css">
+</head>
+<body class="mobile">
+  <div class="container">
+    <div class="video-container">
+      <div class="post">
+        <div class="phone">
+          <div class="play_control">
+            <i class="material-icons">play_arrow</i>
+          </div>
+          <div class="spinner">
+            <div>
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" />
+            </svg>
+            </div>
+          </div>
+          <div class="videoTop">
+            <div>
+              <p>Shorts</p>
+            </div>
+            <div class="iconGroup">
+              <span class="icon">
+                <i class="material-icons">search</i>
+              </span>
+              <span class="icon more">
+                <i class="material-icons">more_vert</i>
+              </span>
+            </div>
+          </div>
+          <div class="videoBottom">
+            <div class="username ">
+              <div class="thumb">
+                <img src="../assets/img/thumbnail.jpg" alt="">
+              </div>
+              <a href="#" class="username-link">JamunaTv</a>
+              <button>Subscribe</button>
+            </div>
+            <p class="post-description">
+              This is a Tik Tok Clone with working Video Player, Like button and comment. But comments dosen't store in any backend.
+            </p>
+          </div>
+          <div class="videoSideber">
+            <div class="side-icon like">
+              <span class="icon">
+                <i class="fa-solid fa-thumbs-up"></i>
+              </span>
+              <span>00</span>
+            </div>
+            <div class="side-icon dislike">
+              <span class="icon">
+                <i class="fa-solid fa-thumbs-down"></i>
+              </span>
+              <span>00</span>
+            </div>
+            <div class="side-icon comment">
+              <span class="icon">
+                <i class="material-icons">comment</i>
+              </span>
+              <span>454</span>
+            </div>
+            <div class="side-icon share" title="">
+              <span class="icon">
+                <i class="fa-solid fa-share"></i>
+              </span>
+              <span>Share</span>
+            </div>
+          </div>
+          <div class="videoProgress">
+            <div class="preview">
+                <img src="assets/img/thumbnail.jpg" alt="" class="previewImg">
+              <span class="time"></span>
+            </div>
+            <div class="progress_area">
+              <div class="progress_bar">
+                  <span></span>
+              </div>
+              <div class="buffered_progress_bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="moreModal">
+          <button class="moreModal-item">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24"  viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true"><path d="M21 6H3V5h18v1zm-8 3-9.99.01V10L13 9.99V9zm8 4H3v1h18v-1zm-8 4H3v1h10v-1z"></path></svg>
+              </span> 
+              Description
+          </button>
+          <button class="moreModal-item">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"aria-hidden="true"><path d="M18 4v15.06l-5.42-3.87-.58-.42-.58.42L6 19.06V4h12m1-1H5v18l7-5 7 5V3z"></path></svg>
+              </span> Save to playlist
+          </button>
+          <button class="moreModal-item">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false"aria-hidden="true"><path d="M6 14v-4c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v1H9.5v-.5h-2v3h2V13H11v1c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1zm8 1h3c.55 0 1-.45 1-1v-1h-1.5v.5h-2v-3h2v.5H18v-1c0-.55-.45-1-1-1h-3c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1zm6-11H4v16h16V4m1-1v18H3V3.01C3 3 3 3 3.01 3H21z"></path></svg>
+              </span> 
+              Captions
+          </button>
+          <button class="moreModal-item">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false"aria-hidden="true"><g><path d="M12 3c-4.96 0-9 4.04-9 9s4.04 9 9 9 9-4.04 9-9-4.04-9-9-9m0-1c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm7 11H5v-2h14v2z"></path></g></svg>
+              </span> 
+              Don't recommend this channel
+          </button>
+          <button class="moreModal-item">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false"aria-hidden="true"><path d="m13.18 4 .24 1.2.16.8H19v7h-5.18l-.24-1.2-.16-.8H6V4h7.18M14 3H5v18h1v-9h6.6l.4 2h7V5h-5.6L14 3z"></path></svg>
+              </span> 
+              Report
+          </button>
+          <button class="moreModal-item">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false"aria-hidden="true"><path d="M13 14h-2v-2h2v2zm0-9h-2v6h2V5zm6-2H5v16.59l3.29-3.29.3-.3H19V3m1-1v15H9l-5 5V2h16z"></path></svg>
+              </span>
+               Send feedback
+          </button>
+        </div>
+        
+        <div class="video-player">
+          <video src="#" class="post-video" poster="assets/img/thumbnail.jpg"></video>  
+        </div>
+
+
+
+
+
+
+
+
+        
+
+              
+     
+      </div>
+    </div>
+    <nav class="mobileNav">
+      <a href="index.html" class="navItem home">
+        <span class="icon">
+          <i class="material-icons">home</i>
+          </span>
+        <span>Home</span>
+      </a>
+      <a href="shorts.html" class="navItem home">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: inherit; width: 100%; height: 100%;" aria-hidden="true"><path d="m17.77 10.32-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zM10 14.65v-5.3L15 12l-5 2.65z"></path></svg>
+          </span>
+        <span>Shorts</span>
+        </a>
+      <a href="#" class="navItem subscriptions">
+        <span class="icon">
+          <i class="material-icons">subscriptions</i>
+          </span>
+        <span>Subscriptions</span>
+      </a>
+      <a href="" class="navItem notifications">
+        <span class="icon">
+          <i class="material-icons">notifications</i>
+          </span>
+        <span>Notifications</span>
+      </a>
+      <a href="#" class="navItem you">
+        <span class="icon">
+          <i class="material-icons">account_circle</i>
+          </span>
+        <span>You</span>
+      </a>
+    </nav>
+    
+  </div>
+  <script src="assets/js/shorts.js"></script>
+</body>
+</html>

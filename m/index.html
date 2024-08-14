@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+      <script src="../assets/js/jquery.js"></script>
+      <script src="../assets/js/function.js"></script>
+      <link rel="stylesheet" href="../assets/css/google-font.css">
+      <link rel="stylesheet" href="assets/css/home.css">
+      <link rel="stylesheet" href="assets/css/common.css">
+   </head>
+   <body class="mobile">
+      <div class="phone">
+         <div class="mobile_search_container">
+            <i class="arrow-left material-icons">arrow_back</i>
+            <input type="text" id='search' placeholder = 'Search Here...'>
+            <div id="voice_search" class='visible'>
+               <i class="material-icons">mic</i>
+            </div>
+            <button class="filterBTN">
+            <i class="material-icons">tune</i>
+            <span>Filters</span>
+            </button>
+         </div>
+         <div class="pop-up">
+            <div class="pop-up__title">
+               Search Filters
+               <div class="close">
+                  <i class="material-icons">close</i>
+               </div>
+            </div>
+            <div class="popup-body">
+               <div class="column">
+                  <div class="column-header">
+                     Upload Date
+                  </div>
+                  <div class="column-body">
+                     <div class="popup-input">
+                        <input type="radio" name="time" id="last_hour" value="last_hour">
+                        <label for="last_hour">Last hour</label>
+                     </div>
+                     <div class="popup-input">
+                        <input type="radio" name="time" id="today" value="today">
+                        <label for="today">Today</label>
+                     </div>
+                     <div class="popup-input">
+                        <input type="radio" name="time" id="this_week" value="this_week">
+                        <label for="this_week">This week</label>
+                     </div>
+                     <div class="popup-input">
+                        <input type="radio" name="time" id="this_month" value="this_month">
+                        <label for="this_month">This month</label>
+                     </div>
+                     <div class="popup-input">
+                        <input type="radio" name="time" id="this_year" value="this_year">
+                        <label for="this_year">This year</label>
+                     </div>
+                  </div>
+               </div>
+               <div class="column">
+                  <div class="column-header">
+                     Duration
+                  </div>
+                  <div class="column-body">
+                     <div class="popup-input">
+                        <input type="radio" name="duration" id="under4" value="under4">
+                        <label for="under4">Under 4 minutes</label>
+                     </div>
+                     <div class="popup-input">
+                        <input type="radio" name="duration" id="between420" value="between420">
+                        <label for="between420">4 - 20 minutes</label>
+                     </div>
+                     <div class="popup-input">
+                        <input type="radio" name="duration" id="over20" value="over20">
+                        <label for="over20">Over 20 minutes</label>
+                     </div>
+                  </div>
+               </div>
+               <div class="column">
+                  <div class="column-header">
+                     short by
+                  </div>
+                  <div class="column-body">
+                     <div class="popup-input">
+                        <input type="radio" name="shortby" id="created_at" value="created_at">
+                        <label for="created_at">Upload date</label>
+                     </div>
+                     <div class="popup-input">
+                        <input type="radio" name="shortby" id="views" value="views">
+                        <label for="views">View count</label>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="content-button-wrapper">
+               <button class="content-button status-button">Reset</button>
+            </div>
+         </div>
+         <div class="overlay-app"></div>
+         <header class="mobile_header">
+            <div class='menu-circle'> </div>
+            <div class="iconGroup">
+               <i id='search_icon' class="material-icons">search</i>
+               <i id='videocam' class="material-icons">videocam</i>
+            </div>
+         </header>
+         <div id='microphone' class=''>
+            <div class="recoder">
+               <div class="close">
+                  <span></span>
+               </div>
+               <select name="lang" id="lang">
+                  <option value="en-US" id="en-US "selected="selected">English - US</option>
+                  <option value="bn-BD" id="bn-BD" >বাংলা</option>
+                  <option value="hi-IN" id="hi-IN" >हिंदी</option>
+                  <option value="ur-PK" id="ur-pk">اردو</option>
+                  <option value="fr-FR" id="fr-FR">French - FR</option>
+                  <option value="pt-PT" id="pt-PT">Português - PT</option>
+               </select>
+               <p id="recoredText"></p>
+               <button id="speakBtn" class="">
+                  <div class="anim"></div>
+                  <i class="material-icons">mic</i>
+               </button>
+            </div>
+         </div>
+         <div id="wrapper">
+            <div class="video_list">
+               <div class="video_player">
+                  <video src='#'></video>
+                  <div style = 'display:nne' class="video_overlay">
+                     <img calss='' src="../assets/img/thumbnail.jpg" alt="">
+                  </div>
+                  <span class='duration'>0:00</span>
+                  <i class="material-icons volume" title = 'mute(m)'>volume_up</i>
+                  <div class="progress_area">
+                     <div class="progress_bar">
+                         <span></span>
+                     </div>
+                     <div class="buffered_progress_bar"></div>
+                  </div>
+                  <div class="spinner">
+                     <div>
+                     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                         <circle cx="50" cy="50" r="46" />
+                     </svg>
+                     </div>
+                   </div>
+               </div>
+               <div class="info">
+                  <div class="channel-photo">
+                     <div style="width:100%;height:100%;border-radius:50%">
+                        <img src="../assets/img/thumbnail.jpg" alt="">
+                     </div>
+                  </div>
+                  <div class="center">
+                     <div class="video-title">
+                        name
+                     </div>
+                     <div class="information">
+                        <span>unknown</span>
+                        <hr>
+                        <span class="views"> views</span>
+                        <hr>
+                        <span class="time">time</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class='loading_icon' style='z-index:100;'></div>
+         <nav class="mobileNav">
+            <a href="index.html" class="navItem home">
+            <span class="icon">
+            <i class="material-icons">home</i>
+            </span>
+            <span>Home</span>
+            </a>
+            <a href="shorts.html" class="navItem home">
+               <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: inherit; width: 100%; height: 100%;" aria-hidden="true">
+                     <path d="m17.77 10.32-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zM10 14.65v-5.3L15 12l-5 2.65z"></path>
+                  </svg>
+               </span>
+               <span>Shorts</span>
+            </a>
+            <a href="#" class="navItem subscriptions">
+            <span class="icon">
+            <i class="material-icons">subscriptions</i>
+            </span>
+            <span>Subscriptions</span>
+            </a>
+            <a href="" class="navItem notifications">
+            <span class="icon">
+            <i class="material-icons">notifications</i>
+            </span>
+            <span>Notifications</span>
+            </a>
+            <a href="#" class="navItem you">
+            <span class="icon">
+            <i class="material-icons">account_circle</i>
+            </span>
+            <span>You</span>
+            </a>
+         </nav>
+      </div>
+
+
+
+
+      
+      
+    
+      <script src="assets/js/home.js"></script>
+   </body>
+</html>

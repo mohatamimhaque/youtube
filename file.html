@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Multiple Files</title>
+</head>
+<body>
+    <h1>Upload Multiple Files</h1>
+    <form id="uploadForm">
+        <input type="file" id="fileInput" multiple>
+        <button type="submit">Upload Files</button>
+    </form>
+
+    <h2>Uploaded File Names:</h2>
+    <ul id="fileNames"></ul>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fileInput = document.getElementById('fileInput');
+            const files = fileInput.files;
+            const fileNames = [];
+
+            for (let i = 0; i < files.length; i++) {
+                fileNames.push(files[i].name);
+            }
+            console.log(fileNames)
+
+            const fileList = document.getElementById('fileNames');
+            fileList.innerHTML = ''; // Clear the list
+
+            fileNames.forEach(function(name) {
+                const li = document.createElement('li');
+                li.textContent = name;
+                fileList.appendChild(li);
+            });
+
+            // If you want to handle the file upload, you can send the files via AJAX to the server here
+        });
+    </script>
+</body>
+</html>

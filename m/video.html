@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+      <script src="../assets/js/jquery.js"></script>
+      <script src="../assets/js/function.js"></script>
+      <link rel="stylesheet" href="../assets/css/google-font.css">
+      <link rel="stylesheet" href="assets/css/video.css">
+      <link rel="stylesheet" href="assets/css/common.css">
+   </head>
+   <body class="mobile">
+      
+      <div class="video_wrapper" >
+         <div class="video_player first_time paused">
+            <div class="contorl-top active">
+               <span class="icon" style="z-index:1">
+               <i class="material-icons auto_play"></i>
+               </span>
+               <span class="icon" id="captionBTn" style="z-index:2">
+               <i class="material-icons">closed_caption</i>
+               </span>
+               <span class="icon" id="settingsBTn" style="z-index:2">
+               <i class="material-icons">settings</i>
+               </span>
+            </div>
+            <div class="video_status active">
+               <div class="play_arrow">
+                  <span class="material-icons">
+                  play_arrow
+                  </span>
+               </div>
+            </div>
+            <div class="mobile_progress_area">
+               <div class="progress_area">
+                  <div class="progress_bar">
+                     <span></span>
+                  </div>
+                  <canvas class="bufferedBar"></canvas>
+               </div>
+            </div>
+            <div class="scrubbing_timer ">
+               <span class="s_current">0:00</span> / <span class="s_duration">0:00</span>
+            </div>
+            <div class="scrubbing_wrapper">
+               <div class="s_progress_area">
+                  <div class="s_progress_bar">
+                     <span></span>
+                  </div>
+               </div>
+               <div class="img-container">
+                  <div class="scrubbing_position">
+                  </div>
+                  <div class="scrubbing_move">
+                  </div>
+                  <div class="fine_scrubbing">
+                     <!----
+                        <div class="item">
+                           <div class="img">
+                              <img src="" alt="">
+                           </div>
+                        </div>
+                        
+                        -->
+                  </div>
+               </div>
+            </div>
+            <div class="control_bottom">
+               <div style='display:flex;justify-content:space-between;align-items:center;width:88%'>
+                  <div class="timer">
+                     <span class="current">0:00</span> / <span class="duration">0:00</span>
+                  </div>
+                  <div class="sc-control">
+                     <span class="icon" >
+                     <i for="fc" class="material-icons fullscreen">fullscreen</i>
+                     </span>
+                     <span class="icon">
+                     <i class="material-icons picture_in_picture">picture_in_picture_alt</i>
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="thumbnail"></div>
+            <p class="caption_text"></p>
+            <div class="progressAreaTime">
+               <div>
+                  <p>0.00
+                  <p>
+               </div>
+            </div>
+            <div class="spinner">
+               <div class="spinner-child">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                     <circle cx="50" cy="50" r="46" />
+                  </svg>
+               </div>
+            </div>
+            <div style="display:non"; class="video_overlay">
+               <img src="../assets/img/thumbnail.jpg">             
+            </div>
+            <p class="caption_text"></p>
+            <video class="main_video" preload="metadata"  src="">
+               <source size="360" type="video/mp4">
+               <track id="track1" label="arabic" kind="subtitles" src="assets/subtitles/arabic.vtt" srclang="en"></track>
+               <track id="track2" label="bangla" kind="subtitles" src="assets/subtitles/bangla.vtt" srclang="en"></track>
+               <track id="track3" label="chinese" kind="subtitles" src="assets/subtitles/chinese.vtt" srclang="en"></track>
+               <track id="track4" label="english" kind="subtitles" src="assets/subtitles/english.vtt" srclang="en"></track>
+               <track id="track5" label="hindi" kind="subtitles" src="assets/subtitles/hindi.vtt" srclang="en"></track>
+               <track id="track6" label="urdu" kind="subtitles" src="assets/subtitles/urdu.vtt" srclang="en"></track>
+            </video>
+            <div class="doubleTap_rewind">
+               <div class="right rewind">
+                  <div class="rewind-child">
+                     <div class="icon-group">
+                        <i class="material-icons"> play_arrow</i><i class="material-icons ">    play_arrow</i><i class="material-icons ">    play_arrow</i>
+                     </div>
+                     <p class="text">
+                        10 seconds
+                     </p>
+                  </div>
+               </div>
+               <div class="left rewind">
+                  <div class="rewind-child">
+                     <div class="icon-group">
+                        <i class="material-icons"> play_arrow</i><i class="material-icons ">    play_arrow</i><i class="material-icons ">    play_arrow</i>
+                     </div>
+                     <p class="text">
+                        10 seconds
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      <div class="phone">
+         <div class="info main">
+            <div class="channel-photo">
+               <div style="width:100%;height:100%;border-radius:50%">
+                  <img src="../assets/img/thumbnail.jpg" alt="">
+               </div>
+            </div>
+            <div class="center">
+               <div class="video-title">
+                 title
+               </div>
+               <div class="information">
+                  <span> views</span>
+                  <hr>
+                  <span>created_at</span>
+               </div>
+            </div>
+            <div class='icon'>
+               <span class="material-icons">expand_less</span>
+            </div>
+         </div>
+         <div class="comments">
+            <div class="top">
+                  <span>Comments</span>
+                  <span>45</span>
+            </div>
+            <div class="bottom">
+                  <img src="../assets/img/thumbnail.jpg" alt="">
+                  <p>Add a comment...</p>
+            </div>
+         </div>
+         <input type="checkbox" id="unique_id" style='display:none' value = ''>
+
+            <div id="wrapper" class="">
+               <div class="video_list">
+                     <div class="video_player">
+                        <video src='#'></video>
+                        <div style = 'display:nne' class="video_overlay">
+                           <img calss='' src="../assets/img/thumbnail.jpg" alt="">
+                        </div>
+                        <span class='duration'>0:00</span>
+                     </div>
+                     <div class="info">
+                        <div class="channel-photo">
+                           <div style="width:100%;height:100%;border-radius:50%">
+                              <img src="../assets/img/thumbnail.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="center">
+                           <div class="video-title">
+                              name
+                           </div>
+                           <div class="information">
+                              <span>unknown</span>
+                              <hr>
+                              <span class="views"> views</span>
+                              <hr>
+                              <span class="time">time</span>
+                           </div>
+                        </div>
+                     </div>
+               </div>
+            </div>
+      </div>
+      
+
+      <div id="details">
+         <div></div>
+         <div class='top'>
+            <h2>Description</h2>
+            <div class="icon">
+               <span></span>
+            </div>
+         </div>
+         <p style='font-size:22px;color:white;font-weight:700;padding:12px 4px' class="video_name">name</p>
+         <div style='display:flex;align-items:center;padding:2px 8px;'>
+            <div style='width:25px;height:25px'>
+               <img style='border-radius:50%;width:100%;height:100%' src="../assets/img/thumbnail.jpg">  
+            </div>
+            <p style='font-size:14px;color:rgba(255,255,255,0.75);font-weight:700;margin-left:5px'>
+               unknown
+            </p>
+         </div>
+         <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 45px;background:gren">
+            <div style='display:flex;align-items:center;justify-content:center;flex-direction:column'>
+               <p style="font-size:16px;font-weight:700;color:white" class="views">views</p>
+               <span style='color:rgba(255,255,255,0.8);font-size:11px'>views</span>
+            </div>
+            
+            <div style='display:flex;align-items:center;justify-content:center;flex-direction:column'>
+               <p style="font-size:16px;font-weight:700;color:white" class="minutes">45</p>
+               <span style='color:rgba(255,255,255,0.8);font-size:11px'>minutes watch</span>
+            </div>
+            
+            <div style='display:flex;align-items:center;justify-content:center;flex-direction:column'>
+               <p style="font-size:16px;font-weight:700;color:white" class="month">June</p>
+               <span style='color:rgba(255,255,255,0.8);font-size:11px' class="year">2022</span>
+            </div>
+         </div>
+      </div>
+
+      <div id="commentSection">
+         <div class='commentHeader'>
+            <div class="hhh">
+               <h2>Comments</h2>
+               <button class="close">
+                  <span class="material-icons">
+                     close
+                  </span>
+               </button>
+            </div>
+            <div class="bbb">
+               <button class="active">Top</button>
+               <button>Newest</button>
+            </div>
+         </div>
+         <div style="position:relative;width:100%;height:100%;overflow: scroll;">
+
+
+            <div class="commentBody">
+               <div class="commentRow">
+                  <div class="commentAuthor">
+                     <img src="../assets/img/thumbnail.jpg" alt="">
+                  </div>
+                  <div class="commentDescript">
+                     <span>@raju_bhai</span>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                     <div class="iconGroup">
+                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
+                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
+                        <button class="comment"><i class="material-icons">comment</i></button>
+                     </div>
+                     <button class="viewReply">
+                        6 repilies
+                     </button>
+                  </div>
+               </div>
+               <div class="commentRow">
+                  <div class="commentAuthor">
+                     <img src="../assets/img/thumbnail.jpg" alt="">
+                  </div>
+                  <div class="commentDescript">
+                     <span>@raju_bhai</span>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                     <div class="iconGroup">
+                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
+                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
+                        <button class="comment"><i class="material-icons">comment</i></button>
+                     </div>
+                     <button class="viewReply">
+                        6 repilies
+                     </button>
+                  </div>
+               </div>
+               <div class="commentRow">
+                  <div class="commentAuthor">
+                     <img src="../assets/img/thumbnail.jpg" alt="">
+                  </div>
+                  <div class="commentDescript">
+                     <span>@raju_bhai</span>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                     <div class="iconGroup">
+                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
+                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
+                        <button class="comment"><i class="material-icons">comment</i></button>
+                     </div>
+                     <button class="viewReply">
+                        6 repilies
+                     </button>
+                  </div>
+               </div>
+               <div class="commentRow">
+                  <div class="commentAuthor">
+                     <img src="../assets/img/thumbnail.jpg" alt="">
+                  </div>
+                  <div class="commentDescript">
+                     <span>@raju_bhai</span>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                     <div class="iconGroup">
+                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
+                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
+                        <button class="comment"><i class="material-icons">comment</i></button>
+                     </div>
+                     <button class="viewReply">
+                        6 repilies
+                     </button>
+                  </div>
+               </div>
+               <div class="commentRow">
+                  <div class="commentAuthor">
+                     <img src="../assets/img/thumbnail.jpg" alt="">
+                  </div>
+                  <div class="commentDescript">
+                     <span>@raju_bhai</span>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                     <div class="iconGroup">
+                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
+                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
+                        <button class="comment"><i class="material-icons">comment</i></button>
+                     </div>
+                     <button class="viewReply">
+                        6 repilies
+                     </button>
+                  </div>
+               </div>
+               <div class="commentRow">
+                  <div class="commentAuthor">
+                     <img src="../assets/img/thumbnail.jpg" alt="">
+                  </div>
+                  <div class="commentDescript">
+                     <span>@raju_bhai</span>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                     <div class="iconGroup">
+                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
+                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
+                        <button class="comment"><i class="material-icons">comment</i></button>
+                     </div>
+                     <button class="viewReply">
+                        6 repilies
+                     </button>
+                  </div>
+               </div>
+               <div class="commentRow">
+                  <div class="commentAuthor">
+                     <img src="../assets/img/thumbnail.jpg" alt="">
+                  </div>
+                  <div class="commentDescript">
+                     <span>@raju_bhai</span>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                     <div class="iconGroup">
+                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
+                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
+                        <button class="comment"><i class="material-icons">comment</i></button>
+                     </div>
+                     <button class="viewReply">
+                        6 repilies
+                     </button>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+         <div class="commentFooter">
+            <img src="../assets/img/thumbnail.jpg" alt="">
+            <input type="text" id="addComment" placeholder="Add a Comment">
+            <button class="dislike"><i class="material-icons">send</i></button>
+         </div>
+        
+      </div>
+    
+      
+
+
+
+
+     
+     <div id="settings" class="">
+        <div class="setting_menu">
+           <ul>
+              <li id="quality">
+                 <i class="material-icons">equalizer</i>
+                 <span>quality</span>
+              </li>
+              <li id="subtitles_btn">
+                 <i class="material-icons">subtitles</i>
+                 <span>captions</span>
+              </li>
+              <li id="loop" class="">
+                 <i class="material-icons">loop</i>
+                 <span>loop video</span>
+                 <hr style='width:3px;height:3px;border:none;background:rgba(255,255,255,0.6);margin:0 8px;border-radius:50%'>
+                 <p style='font-size:15px;color:rgba(255,255,255,0.5)'>off</p>
+              </li>
+              <li id="playback_speed">
+                 <i class="material-icons">slow_motion_video</i>
+                 <span>placyback speed</span>
+              </li>
+           </ul>
+        </div>
+     </div>
+     <div id="qualities" class="">
+        <div class="qualities_menu">
+           <span>Qualty for current video</span>
+           <ul>
+              <li data-quality="auto" class="active quality-auto">auto</li>
+           </ul>
+           <p>This selection only applies to the current video.For al videos got to setting</p>
+        </div>
+     </div>
+     <div id="playback" class="">
+        <div class="playback_menu">
+           <ul>
+              <li data-speed="0.25">0.25x</li>
+              <li data-speed="0.5">0.5x</li>
+              <li data-speed="0.75">0.75x</li>
+              <li data-speed="1" class="active">Normal</li>
+              <li data-speed="1.25">1.25x</li>
+              <li data-speed="1.5">1.5x</li>
+              <li data-speed="1.75">1.75x</li>
+              <li data-speed="2">2x</li>
+           </ul>
+        </div>
+     </div>
+     <div id="subtitles" class="">
+        <div class="subtitles_menu">
+           <ul>
+           </ul>
+        </div>
+     </div>
+     <div id="captions"></div>
+
+
+
+
+
+
+
+
+      
+    
+
+      <script src="assets/js/video.js"></script>
+   </body>
+</html>
