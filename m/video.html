@@ -17,15 +17,22 @@
       <div class="video_wrapper" >
          <div class="video_player first_time paused">
             <div class="contorl-top active">
+               <div class="left">
+                  <a class="back_icon" href="index.html">
+                     <i class="material-icons">expand_more</i>
+                  </a>
+               </div>
+             <div class="right">
                <span class="icon" style="z-index:1">
-               <i class="material-icons auto_play"></i>
-               </span>
-               <span class="icon" id="captionBTn" style="z-index:2">
-               <i class="material-icons">closed_caption</i>
-               </span>
-               <span class="icon" id="settingsBTn" style="z-index:2">
-               <i class="material-icons">settings</i>
-               </span>
+                  <i class="material-icons auto_play"></i>
+                  </span>
+                  <span class="icon" id="captionBTn" style="z-index:2">
+                  <i class="material-icons">closed_caption</i>
+                  </span>
+                  <span class="icon" id="settingsBTn" style="z-index:2">
+                  <i class="material-icons">settings</i>
+                  </span>
+             </div>
             </div>
             <div class="video_status active">
                <div class="play_arrow">
@@ -154,22 +161,20 @@
                   <span>created_at</span>
                </div>
             </div>
-            <div class='icon'>
+            <div class='icon' style="margin-right: 12px;">
                <span class="material-icons">expand_less</span>
             </div>
          </div>
          <div class="comments">
             <div class="top">
                   <span>Comments</span>
-                  <span>45</span>
+                  <span class="total_comment" style="margin-left: 2px;">45</span>
             </div>
             <div class="bottom">
                   <img src="../assets/img/thumbnail.jpg" alt="">
                   <p>Add a comment...</p>
             </div>
          </div>
-         <input type="checkbox" id="unique_id" style='display:none' value = ''>
-
             <div id="wrapper" class="">
                <div class="video_list">
                      <div class="video_player">
@@ -265,124 +270,90 @@
                      <span>@raju_bhai</span>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                      <div class="iconGroup">
-                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
-                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
+                        <button class="like"><i class="material-icons">thumb_up</i> <span>48</span></button>
+                        <button class="dislike"><i class="material-icons">thumb_down</i> <span>42</span></button>
                         <button class="comment"><i class="material-icons">comment</i></button>
                      </div>
                      <button class="viewReply">
-                        6 repilies
+                        <i style="margin-right: 2px;">5</i> repilies
                      </button>
                   </div>
+                  <div class="replySection">
+                      <div class='commentHeader'>
+                         <div class="hhh">
+                            <div style="display:flex;align-items:center;">
+                               <span class="material-icons replyBack">
+                                  arrow_back
+                               </span>
+                               <h2>Replies</h2>
+                            </div>
+                            <button class="close">
+                               <span class="material-icons">
+                                  close
+                               </span>
+                            </button>
+                         </div>
+                      </div>
+                      <div style="position:relative;width:100%;height:100%;overflow: scroll;">
+                         <div class="comBody">
+                            <div class="comRow">
+                               <div class="commentAuthor">
+                                  <img src="../assets/img/thumbnail.jpg" alt="">
+                               </div>
+                               <div class="commentDescript">
+                                  <span>@raju_bhai</span>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                  <div class="iconGroup">
+                                     <button class="like"><i class="material-icons">thumb_up</i> <span>48</span></button>
+                                     <button class="dislike"><i class="material-icons">thumb_down</i> <span>5</span></button>
+                                  </div>
+                                  <div class="comment_replies">
+                                     <div class="replyRow">
+                                        <div class="commentAuthor">
+                                           <img src="../assets/img/thumbnail.jpg" alt="">
+                                        </div>
+                                        <div class="commentDescript">
+                                           <span>@raju_bhai</span>
+                                           <p>Lorem ipsum dolor sit amet,  incididunt ut labore et dolore magna aliqua.</p>
+                                           <div class="iconGroup">
+                                              <button class="replike"><i class="material-icons">thumb_up</i> <span>48</span></button>
+                                              <button class="repdislike"><i class="material-icons">thumb_down</i> <span>8</span></button>
+                                              <button class="repcomment"><i class="material-icons">comment</i></button>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+             
+             
+    
+                            
+    
+    
+    
+    
+    
+    
+                         </div>
+                         
+                      </div>
+                      <div class="commentFooter">
+                         <img src="../assets/img/thumbnail.jpg" alt="">
+                         <input type="text" class="addReply" placeholder="Add a Reply">
+                         <button class=""><i class="material-icons">send</i></button>
+                      </div>
+                   </div>
                </div>
-               <div class="commentRow">
-                  <div class="commentAuthor">
-                     <img src="../assets/img/thumbnail.jpg" alt="">
-                  </div>
-                  <div class="commentDescript">
-                     <span>@raju_bhai</span>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                     <div class="iconGroup">
-                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
-                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
-                        <button class="comment"><i class="material-icons">comment</i></button>
-                     </div>
-                     <button class="viewReply">
-                        6 repilies
-                     </button>
-                  </div>
-               </div>
-               <div class="commentRow">
-                  <div class="commentAuthor">
-                     <img src="../assets/img/thumbnail.jpg" alt="">
-                  </div>
-                  <div class="commentDescript">
-                     <span>@raju_bhai</span>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                     <div class="iconGroup">
-                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
-                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
-                        <button class="comment"><i class="material-icons">comment</i></button>
-                     </div>
-                     <button class="viewReply">
-                        6 repilies
-                     </button>
-                  </div>
-               </div>
-               <div class="commentRow">
-                  <div class="commentAuthor">
-                     <img src="../assets/img/thumbnail.jpg" alt="">
-                  </div>
-                  <div class="commentDescript">
-                     <span>@raju_bhai</span>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                     <div class="iconGroup">
-                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
-                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
-                        <button class="comment"><i class="material-icons">comment</i></button>
-                     </div>
-                     <button class="viewReply">
-                        6 repilies
-                     </button>
-                  </div>
-               </div>
-               <div class="commentRow">
-                  <div class="commentAuthor">
-                     <img src="../assets/img/thumbnail.jpg" alt="">
-                  </div>
-                  <div class="commentDescript">
-                     <span>@raju_bhai</span>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                     <div class="iconGroup">
-                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
-                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
-                        <button class="comment"><i class="material-icons">comment</i></button>
-                     </div>
-                     <button class="viewReply">
-                        6 repilies
-                     </button>
-                  </div>
-               </div>
-               <div class="commentRow">
-                  <div class="commentAuthor">
-                     <img src="../assets/img/thumbnail.jpg" alt="">
-                  </div>
-                  <div class="commentDescript">
-                     <span>@raju_bhai</span>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                     <div class="iconGroup">
-                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
-                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
-                        <button class="comment"><i class="material-icons">comment</i></button>
-                     </div>
-                     <button class="viewReply">
-                        6 repilies
-                     </button>
-                  </div>
-               </div>
-               <div class="commentRow">
-                  <div class="commentAuthor">
-                     <img src="../assets/img/thumbnail.jpg" alt="">
-                  </div>
-                  <div class="commentDescript">
-                     <span>@raju_bhai</span>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                     <div class="iconGroup">
-                        <button class="like"><i class="material-icons">thumb_up</i> 48</button>
-                        <button class="dislike"><i class="material-icons">thumb_down</i> 5</button>
-                        <button class="comment"><i class="material-icons">comment</i></button>
-                     </div>
-                     <button class="viewReply">
-                        6 repilies
-                     </button>
-                  </div>
-               </div>
+
+
             </div>
             
          </div>
          <div class="commentFooter">
             <img src="../assets/img/thumbnail.jpg" alt="">
             <input type="text" id="addComment" placeholder="Add a Comment">
-            <button class="dislike"><i class="material-icons">send</i></button>
+            <button class=""><i class="material-icons">send</i></button>
          </div>
         
       </div>

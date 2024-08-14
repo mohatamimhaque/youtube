@@ -850,10 +850,20 @@ video::cue {
     display:none;
     z-index:10;
     top:12px;
-    right:8px
+    right:8px;
+    width:100%;
+}
+.contorl-top .left{
+    margin-left:16px;
+}
+.contorl-top .left i{
+    font-size:28px;
+    cursor: pointer;
+    color:#5a5a5a
 }
 .contorl-top.active{
-    display:flex
+    display:flex;
+    justify-content: space-between;
 }
 .contorl-top .icon{
     margin-left: 6px;
@@ -1465,39 +1475,15 @@ padding:4px 7px;
     padding:4px 8px;
   }
   
-  .phone .info .icon span{
+  .phone .info .icon i{
     content:'';
-    position: absolute;
+    position: relative;
     top:-5px;
-    right:6px;
-    width:4px;
-    height: 4px;
-    background-color: rgba(255,255,255,0.8);
-    border-radius: 50%;
-  
-  }
-  .phone .info .icon span::after{
-    content:'';
-    position: absolute;
-    top:7px;
-    width:4px;
-    height: 4px;
+    
     background-color: rgba(255,255,255,0.8);
   
-    border-radius: 50%;
-  
   }
-  .phone .info .icon span::before{
-    content:'';
-    position: absolute;
-    top:14px;
-    width:4px;
-    height: 4px;
-    background-color: rgba(255,255,255,0.8);
-  
-    border-radius: 50%;
-  
-  }
+ 
   .phone .info .center{
     width:calc(100% - 70px);
     padding:4px;
@@ -1509,7 +1495,6 @@ padding:4px 7px;
   .phone .video-title{
     font-size: 16px;
     color: rgba(255,255,255,0.9);
-   
   }
   .phone .info .information{
     display: flex;
@@ -1536,7 +1521,7 @@ padding:4px 7px;
     margin-bottom: 60px;
   }
 
-  
+
 #commentSection{
     position:fixed;
     width:100%;
@@ -1545,16 +1530,16 @@ padding:4px 7px;
     left:0;
     z-index:20;
     height:0;
-    display:flex;
     flex-direction:column;
     transition: 0.3s;
     backdrop-filter: blur(80px);
     overflow: hidden;
-    display: ;
+    display: flex;
+    margin-bottom: 12;
 }
-#commentSection.active{
-    transition: 0.3s;
+#commentSection.visible{
     height:calc(100% - 200px);
+    transition: 0.3s;
     padding:10px;
   }
 #commentSection img{
@@ -1571,7 +1556,8 @@ padding:4px 7px;
 }
 
 
-  #commentSection .commentHeader{
+
+#commentSection .commentHeader{
     padding:8px;
     border-bottom:2px solid var(--border-color);
 }
@@ -1584,13 +1570,17 @@ padding:4px 7px;
     color:var(--theme-color);
     font-size:24px;
   }
-  #commentSection .commentHeader .close{
+  #commentSection .commentHeader span{
     position:relative;
     color: #cfcfcf;
     padding:8px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+  }
+  #commentSection .commentHeader .bbb{
+    display: flex;
   }
   #commentSection .commentHeader .bbb button{
     background-color: #727272;
@@ -1604,17 +1594,20 @@ padding:4px 7px;
     color: black;
   }
   
-.commentBody{
+.commentBody,
+.comBody{
     padding:8px 12px;display: flex;
     flex-direction: column;
     margin-bottom: 16px;
 }
-.commentRow{
+.commentRow,.replyRow,.comRow{
     padding:4px;
     border-radius: 8px;
     display: flex;
 }
-
+.commentRow:last-child,.replyRow:last-child{
+    margin-bottom: 12px;
+}
 .commentDescript{
     margin-left: 4px;
 }
@@ -1632,11 +1625,19 @@ padding:4px 7px;
 }
 #commentSection .iconGroup{
     margin:4px 0;
+    display: flex;
+}
+#commentSection button{
+    cursor: pointer;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #commentSection .iconGroup i{
     font-size: 16px;
     padding:2px;
-    color:#bebebe
+    color:#bebebe;
 }
 #commentSection .iconGroup .comment{
     margin-left:8px
@@ -1645,6 +1646,7 @@ padding:4px 7px;
 #commentSection .viewReply{
     color:#0023eb;
     font-size: 15px;
+    cursor: pointer;
 }
 .commentFooter{
     position:fixed;
@@ -1677,4 +1679,70 @@ padding:4px 7px;
     padding:3px;
     background: none;
     color: #c2bdbd;
+    cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.replySection{
+    position:fixed;
+    width:100%;
+    background:black;
+    bottom:0;
+    left:0;
+    z-index:22;
+    height:0;
+    flex-direction:column;
+    transition: 0.3s;
+    backdrop-filter: blur(80px);
+    overflow: hidden;
+    display: flex; 
+}
+
+.replySection.visible{
+    height:calc(100% - 0px);
+    transition: 0.3s;
+    padding:10px;
+  }
+.replySection .commentHeader .close{
+    position:relative;
+    color: #cfcfcf;
+    padding:4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.commentRow{
+    padding:4px;
+    border-radius: 8px;
+    display: flex;
+}
+
+

@@ -1265,9 +1265,11 @@ $(document).ready(function() {
 
     var commentArea = document.querySelector(".comment_show");
     var data = commentArea.innerHTML;
-    for(let i=0;i<6;i++){
+    var  total_comment = Math.floor(Math.random() * 10) + 1;
+    for(let i=0;i<total_comment;i++){
         commentArea.innerHTML += data;
     }
+    document.querySelector(".total_comment").innerHTML = total_comment+1;
 
     var commentRow = document.querySelectorAll(".commentRow");
     for(let i=0;i<commentRow.length;i++){
@@ -1285,7 +1287,7 @@ $(document).ready(function() {
         item.querySelector(".like").innerHTML = Math.floor(Math.random() * 10000) + 1;
         item.querySelector(".dislike").innerHTML = Math.floor(Math.random() * 10000) + 1;
         const randomNumber = Math.floor(Math.random() * 10) + 1;
-        total_reply.innerHTML = randomNumber;
+        total_reply.innerHTML = randomNumber+1;
 
         const dt = comment_replies.innerHTML;
         for(let i=0;i<randomNumber;i++){

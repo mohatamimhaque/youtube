@@ -919,12 +919,96 @@ function mobileVideo() {
 
 }
 $(document).ready(function() {
+   // $("#commentSection").addClass("visible");
+    //   $(".replySection").addClass("visible");
+
+
     $(".comments").click(function() {
-        $("#commentSection").addClass("active");
+        $("#commentSection").addClass("visible");
+        $(".replySection").removeClass("visible");
     });
     $("#commentSection .close").click(function() {
-        $("#commentSection").removeClass("active");
+        $("#commentSection").removeClass("visible");
+        $(".replySection").removeClass("visible");
     });
+
+
+   
+
+    var commentSecton = document.querySelector("#commentSection");
+    var commentArea = document.querySelector(".commentBody");
+    var data = commentArea.innerHTML;
+    var  total_comment = Math.floor(Math.random() * 10) + 1;
+    for(let i=0;i<total_comment;i++){
+        commentArea.innerHTML += data;
+    }
+    document.querySelector(".total_comment").innerHTML = total_comment+1;
+
+    var commentRow = document.querySelectorAll(".commentRow");
+    for(let i=0;i<commentRow.length;i++){
+        const item = commentRow[i];
+        const viewReplyspan = $(item).find('.viewReply i');
+        const replyShow = item.querySelector(".viewReply");
+        const replyShowByIcon = item.querySelectorAll(".commentDescript .comment")[0];
+
+        const replySection = item.querySelector(".replySection");
+        const replyBack = item.querySelector(".replySection .replyBack");
+        const replyClose = item.querySelector(".replySection .close");
+
+        
+        
+        
+        replyShowByIcon.addEventListener('click',()=>{
+            replySection.classList.add("visible");
+        })
+        replyShow.addEventListener('click',()=>{
+            replySection.classList.add("visible");
+        })
+        replyBack.addEventListener('click',()=>{
+            replySection.classList.remove("visible");
+        })
+        replyClose.addEventListener('click',()=>{
+            replySection.classList.remove("visible");
+            commentSecton.classList.remove("visible");
+        })
+        
+        const comment_replies = item.querySelector(".comment_replies");
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        viewReplyspan.html(randomNumber+1 );
+        const dt = comment_replies.innerHTML;
+        for(let i=0;i<randomNumber;i++){
+            comment_replies.innerHTML +=dt;
+        }
+
+
+
+       
+       
+       
+       
+      
+        $(item).find('.like span').html(Math.floor(Math.random() * 10000) + 1);
+        $(item).find('.dislike span').html(Math.floor(Math.random() * 10000) + 1);
+        const replike = item.querySelectorAll(".replike span");
+        const repdislike = item.querySelectorAll(".repdislike span");
+        const repcomment = item.querySelectorAll(".repcomment");
+
+
+
+        for(let i=0;i<replike.length;i++){
+            replike[i].innerHTML = (Math.floor(Math.random() * 10000) + 1);
+            repdislike[i].innerHTML = (Math.floor(Math.random() * 10000) + 1);
+        }
+
+       
+    }
+
+    $("#commentSection .commentFooter button").click(function() {
+        $("#commentSection").removeClass("visible");
+        $(".replySection").removeClass("visible");
+    });
+
+
 });
 
 suggest();
